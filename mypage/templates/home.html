@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Welcome {{name}}, here are top destinations!</h1>
+    <a href="https://www.google.com/">gooogle</a>
+    <div>
+    <ul>
+	{% for name in city_list %}
+
+	<li> {{ name }} </li>
+
+	{% endfor %}
+    </ul>
+    </div>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        <p> {{ form.city_name.label }} <br>
+        {{ form.city_name(size=32) }}</p>
+
+        <p> {{ form.city_rank.label }} <br>
+        {{ form.city_rank(size=32) }}</p>
+
+    	<p> {{ form.is_visited.label }} <br>
+    	{{ form.is_visited() }}</p>
+
+    	<p>{{ form.submit() }}</p>
+	</form>
+{% endblock %}
