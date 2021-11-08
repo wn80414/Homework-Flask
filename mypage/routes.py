@@ -10,8 +10,7 @@ def home():
     if form.validate_on_submit():
         cityParam = form.city_name.data
         rankParam = form.city_rank.data
-        visitParam = form.is_visited.data
-        city = City(city_name = cityParam, city_rank = rankParam, is_visited = visistParam)
+        city = City(city_name = cityParam, city_rank = rankParam)
         db.session.add(city)
         db.session.commit()
         flash(f'{cityParam} Added To List.')
